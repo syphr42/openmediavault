@@ -40,7 +40,7 @@ rtcsync
 # one second, but only in the first three clock updates.
 makestep {{ makestep }}
 
-# Allow clients to request time with allow directives below
+# Allow clients to request time with allow directives below.
 {%- for client in clients.replace(',', ' ').replace(';', ' ').split() %}
 allow {{ client }}
 {%- endfor %}
