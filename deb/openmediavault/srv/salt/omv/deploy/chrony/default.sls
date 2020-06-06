@@ -27,6 +27,7 @@ configure_chrony:
     - template: jinja
     - context:
         timeservers: "{{ config.ntp.timeservers }}"
+        clients: "{{ config.ntp.clients }}"
     - user: root
     - group: root
     - mode: 644
