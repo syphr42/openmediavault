@@ -151,11 +151,15 @@ Ext.define("OMV.module.admin.system.time.Time", {
 			},{
 				xtype: "textfield",
 				name: "ntpclients",
-				fieldLabel: _("Allow clients"),
-				vtype: "domainnameIPList",
+				fieldLabel: _("Allowed clients"),
+				vtype: "hostnameIPNetCIDRList",
 				allowBlank: true,
 				readOnly: true,
-				value: ""
+				value: "",
+				plugins: [{
+					ptype: "fieldinfo",
+					text: _("IP addresses in CIDR notation (preferred) or host names of allowed clients.")
+				}]
 			},{
 				xtype: "fieldcontainer",
 				fieldLabel: _("Manual"),
