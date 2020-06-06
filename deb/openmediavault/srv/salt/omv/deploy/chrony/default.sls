@@ -26,8 +26,7 @@ configure_chrony:
       - salt://{{ tpldir }}/files/etc-chrony-chrony_conf.j2
     - template: jinja
     - context:
-        timeservers: "{{ config.ntp.timeservers }}"
-        clients: "{{ config.ntp.clients }}"
+        ntp_config: "{{ config.ntp }}"
     - user: root
     - group: root
     - mode: 644
