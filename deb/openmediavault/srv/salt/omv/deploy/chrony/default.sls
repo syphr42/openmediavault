@@ -26,7 +26,7 @@ configure_chrony:
       - salt://{{ tpldir }}/files/etc-chrony-chrony_conf.j2
     - template: jinja
     - context:
-        ntp_config: "{{ config.ntp | json }}"
+        ntp_config: {{ config.ntp | json }}
     - user: root
     - group: root
     - mode: 644
